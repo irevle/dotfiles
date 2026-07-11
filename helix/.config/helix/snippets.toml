@@ -1,0 +1,186 @@
+[html]
+"html:5" = { prefix = "!", body = ["<!DOCTYPE html>", "<html lang=\"${1:en}\">", "<head>", "\t<meta charset=\"UTF-8\">", "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">", "\t<title>${2:Document}</title>", "</head>", "<body>", "\t${0}", "</body>", "</html>"] }
+div = { prefix = "div", body = ["<div${1: class=\"${2}\"}>", "\t${0}", "</div>"] }
+"div#id" = { prefix = "div#", body = ["<div id=\"${1}\">", "\t${0}", "</div>"] }
+"div.class" = { prefix = "div.", body = ["<div class=\"${1}\">", "\t${0}", "</div>"] }
+a = { prefix = "a", body = ["<a href=\"${1:#}\">${2}</a>${0}"] }
+img = { prefix = "img", body = ["<img src=\"${1}\" alt=\"${2}\">${0}"] }
+link = { prefix = "link", body = ["<link rel=\"stylesheet\" href=\"${1}\">"] }
+script = { prefix = "script", body = ["<script src=\"${1}\"></script>"] }
+"script:tag" = { prefix = "sc", body = ["<script>", "\t${0}", "</script>"] }
+style = { prefix = "style", body = ["<style>", "\t${0}", "</style>"] }
+ul = { prefix = "ul", body = ["<ul>", "\t<li>${1}</li>", "</ul>"] }
+ol = { prefix = "ol", body = ["<ol>", "\t<li>${1}</li>", "</ol>"] }
+li = { prefix = "li", body = ["<li>${1}</li>${0}"] }
+p = { prefix = "p", body = ["<p>${1}</p>${0}"] }
+section = { prefix = "section", body = ["<section${1: class=\"${2}\"}>", "\t${0}", "</section>"] }
+nav = { prefix = "nav", body = ["<nav>", "\t${0}", "</nav>"] }
+header = { prefix = "header", body = ["<header>", "\t${0}", "</header>"] }
+footer = { prefix = "footer", body = ["<footer>", "\t${0}", "</footer>"] }
+main = { prefix = "main", body = ["<main>", "\t${0}", "</main>"] }
+form = { prefix = "form", body = ["<form action=\"${1}\" method=\"${2:post}\">", "\t${0}", "</form>"] }
+input = { prefix = "input", body = ["<input type=\"${1:text}\" name=\"${2}\"${3: value=\"${4}\"}>"] }
+button = { prefix = "button", body = ["<button${1: type=\"${2:button}\"}>${3}</button>"] }
+label = { prefix = "label", body = ["<label for=\"${1}\">${2}</label>"] }
+"meta:viewport" = { prefix = "metav", body = ["<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"] }
+"meta:charset" = { prefix = "metac", body = ["<meta charset=\"UTF-8\">"] }
+
+[css]
+"flex:center" = { prefix = "flexc", body = ["display: flex;", "justify-content: center;", "align-items: center;"] }
+"flex:col" = { prefix = "flexcol", body = ["display: flex;", "flex-direction: column;"] }
+"flex:row" = { prefix = "flexrow", body = ["display: flex;", "flex-direction: row;"] }
+"grid:center" = { prefix = "gridc", body = ["display: grid;", "place-items: center;"] }
+media = { prefix = "mq", body = ["@media (${1:min-width: 768px}) {", "\t${0}", "}"] }
+"keyframes" = { prefix = "kf", body = ["@keyframes ${1:name} {", "\t0% {", "\t\t${0}", "\t}", "\t100% {", "\t\t", "\t}", "}"] }
+bf = { prefix = "bf", body = ["&::${1:before} {", "\tcontent: '${2}';", "\t${0}", "}"] }
+"reset" = { prefix = "reset", body = ["*, *::before, *::after {", "\tbox-sizing: border-box;", "\tmargin: 0;", "\tpadding: 0;", "}"] }
+
+[javascript]
+"console.log" = { prefix = "cl", body = ["console.log(${1});"] }
+"console.error" = { prefix = "ce", body = ["console.error(${1});"] }
+"arrow function" = { prefix = "af", body = ["const ${1:name} = (${2}) => {", "\t${0}", "};"] }
+"function" = { prefix = "fn", body = ["function ${1:name}(${2}) {", "\t${0}", "}"] }
+"for loop" = { prefix = "for", body = ["for (let ${1:i} = 0; ${1:i} < ${2:arr}.length; ${1:i}++) {", "\tconst ${3:element} = ${2:arr}[${1:i}];", "\t${0}", "}"] }
+"for...of" = { prefix = "forof", body = ["for (const ${1:item} of ${2:arr}) {", "\t${0}", "}"] }
+"if" = { prefix = "if", body = ["if (${1:condition}) {", "\t${0}", "}"] }
+"if/else" = { prefix = "ife", body = ["if (${1:condition}) {", "\t${2}", "} else {", "\t${0}", "}"] }
+"try/catch" = { prefix = "try", body = ["try {", "\t${1}", "} catch (${2:error}) {", "\t${0}", "}"] }
+"import" = { prefix = "im", body = ["import ${1:name} from '${2:module}';"] }
+"named import" = { prefix = "imn", body = ["import { ${1} } from '${2:module}';"] }
+"export default" = { prefix = "exd", body = ["export default ${1:name};"] }
+"export named" = { prefix = "exn", body = ["export const ${1:name} = ${2};"] }
+"class" = { prefix = "cls", body = ["class ${1:Name} {", "\tconstructor(${2}) {", "\t\t${0}", "\t}", "}"] }
+"fetch" = { prefix = "fetch", body = ["fetch('${1:url}')", "\t.then(res => res.json())", "\t.then(${2:data} => {", "\t\t${0}", "\t})", "\t.catch(err => console.error(err));"] }
+"async/await" = { prefix = "awa", body = ["const ${1:result} = await ${2:promise};"] }
+"addEventListener" = { prefix = "ael", body = ["${1:element}.addEventListener('${2:click}', (${3:e}) => {", "\t${0}", "});"] }
+
+[rust]
+"fn" = { prefix = "fn", body = ["fn ${1:name}(${2})${3: -> ${4:()}} {", "\t${0}", "}"] }
+"let" = { prefix = "let", body = ["let ${1:name}${2:: ${3:type}} = ${4:value};"] }
+"let mut" = { prefix = "letm", body = ["let mut ${1:name} = ${2:value};"] }
+"match" = { prefix = "match", body = ["match ${1:value} {", "\t${2:Pattern} => ${3},", "\t_ => ${0},", "}"] }
+"impl" = { prefix = "impl", body = ["impl ${1:Trait} for ${2:Type} {", "\t${0}", "}"] }
+"struct" = { prefix = "struct", body = ["struct ${1:Name} {", "\t${0}", "}"] }
+"enum" = { prefix = "enum", body = ["enum ${1:Name} {", "\t${0}", "}"] }
+"pub fn" = { prefix = "pubfn", body = ["pub fn ${1:name}(${2})${3: -> ${4:()}} {", "\t${0}", "}"] }
+"derive" = { prefix = "der", body = ["#[derive(${1:Debug, Clone})]"] }
+"println" = { prefix = "pl", body = ["println!(\"${1:?}\", ${2});"] }
+"main" = { prefix = "main", body = ["fn main() {", "\t${0}", "}"] }
+"for" = { prefix = "for", body = ["for ${1:i} in ${2:iter} {", "\t${0}", "}"] }
+"if let" = { prefix = "ifl", body = ["if let ${1:Some(val)} = ${2:option} {", "\t${0}", "}"] }
+"let else" = { prefix = "lete", body = ["let ${1:val} = ${2:option} else {", "\t${0}", "};"] }
+"unwrap/expect" = { prefix = "exp", body = [".expect(\"${1:message}\")"] }
+"map/and_then" = { prefix = "map", body = [".map(|${1:val}| ${2:val})"] }
+
+[go]
+"if err" = { prefix = "ie", body = ["if err != nil {", "\treturn ${0}", "}"] }
+"func" = { prefix = "func", body = ["func ${1:name}(${2})${3: ${4:error}} {", "\t${0}", "}"] }
+"type struct" = { prefix = "struct", body = ["type ${1:Name} struct {", "\t${0}", "}"] }
+"type interface" = { prefix = "iface", body = ["type ${1:Name} interface {", "\t${0}", "}"] }
+"for range" = { prefix = "forr", body = ["for ${1:i}, ${2:v} := range ${3:slice} {", "\t${0}", "}"] }
+"for i" = { prefix = "fori", body = ["for ${1:i} := 0; ${1:i} < ${2:len}; ${1:i}++ {", "\t${0}", "}"] }
+"switch" = { prefix = "switch", body = ["switch ${1:v} {", "\tcase ${2}:", "\t\t${0}", "}"] }
+"defer" = { prefix = "defer", body = ["defer ${1:close()}"] }
+"go func" = { prefix = "go", body = ["go func() {", "\t${0}", "}()"] }
+"select" = { prefix = "sel", body = ["select {", "\tcase <-${1:ch}:", "\t\t${0}", "}"] }
+"make chan" = { prefix = "chan", body = ["${1:ch} := make(chan ${2:string}${3:, ${4:1}})"] }
+"init" = { prefix = "init", body = ["func init() {", "\t${0}", "}"] }
+"main" = { prefix = "main", body = ["func main() {", "\t${0}", "}"] }
+"json tag" = { prefix = "jsont", body = ["`json:\"${1:name}\"`"] }
+"http handler" = { prefix = "handler", body = ["http.HandleFunc(\"${1:/path}\", func(w http.ResponseWriter, r *http.Request) {", "\t${0}", "})"] }
+
+[python]
+"def" = { prefix = "def", body = ["def ${1:name}(${2}):", "\t${0}"] }
+"class" = { prefix = "class", body = ["class ${1:Name}:", "\t${0}"] }
+"if __name__" = { prefix = "main", body = ["if __name__ == '__main__':", "\t${0}"] }
+"for" = { prefix = "for", body = ["for ${1:i} in ${2:iterable}:", "\t${0}"] }
+"import" = { prefix = "im", body = ["import ${1:module}"] }
+"from import" = { prefix = "from", body = ["from ${1:module} import ${2:name}"] }
+"lambda" = { prefix = "lam", body = ["lambda ${1:x}: ${2:x}"] }
+"list comp" = { prefix = "lc", body = ["[${1:x} for ${1:x} in ${2:iterable}]"] }
+"dict comp" = { prefix = "dc", body = ["{${1:k}: ${2:v} for ${1:k}, ${2:v} in ${3:iterable}}"] }
+"try/except" = { prefix = "try", body = ["try:", "\t${1}", "except ${2:Exception} as ${3:e}:", "\t${0}"] }
+"async def" = { prefix = "async", body = ["async def ${1:name}(${2}):", "\t${0}"] }
+"with" = { prefix = "with", body = ["with ${1:open('file')} as ${2:f}:", "\t${0}"] }
+"if" = { prefix = "if", body = ["if ${1:condition}:", "\t${0}"] }
+"elif/else" = { prefix = "ife", body = ["if ${1:condition}:", "\t${2}", "elif ${3}:", "\t${4}", "else:", "\t${0}"] }
+"@dataclass" = { prefix = "dc", body = ["from dataclasses import dataclass", "", "@dataclass", "class ${1:Name}:", "\t${0}"] }
+
+[c]
+"#include" = { prefix = "inc", body = ["#include <${1:stdio.h}>"] }
+"#define" = { prefix = "def", body = ["#define ${1:NAME} ${2:value}"] }
+"main" = { prefix = "main", body = ["int main(${1:int argc, char *argv[]}) {", "\t${0}", "\treturn 0;", "}"] }
+"for" = { prefix = "for", body = ["for (int ${1:i} = 0; ${1:i} < ${2:n}; ${1:i}++) {", "\t${0}", "}"] }
+"struct" = { prefix = "struct", body = ["typedef struct {", "\t${1}", "} ${2:Name};"] }
+"if" = { prefix = "if", body = ["if (${1:condition}) {", "\t${0}", "}"] }
+
+[cpp]
+"#include" = { prefix = "inc", body = ["#include <${1:iostream}>"] }
+"class" = { prefix = "class", body = ["class ${1:Name} {", "public:", "\t${2}", "private:", "\t${0}", "};"] }
+"for" = { prefix = "for", body = ["for (${1:auto} ${2:i} : ${3:collection}) {", "\t${0}", "}"] }
+"main" = { prefix = "main", body = ["int main(${1:int argc, char *argv[]}) {", "\t${0}", "}"] }
+"std::cout" = { prefix = "cout", body = ["std::cout << ${1} << std::endl;"] }
+"auto" = { prefix = "auto", body = ["auto ${1:name} = ${2:value};"] }
+"template" = { prefix = "temp", body = ["template <typename ${1:T}>", "${0}"] }
+"lambda" = { prefix = "lam", body = ["[${1}](auto ${2:arg}) { return ${0}; }"] }
+
+[php]
+"<?php" = { prefix = "php", body = ["<?php", "", "${0}", "", "?>"] }
+"function" = { prefix = "fn", body = ["function ${1:name}(${2}): ${3:void}", "{", "\t${0}", "}"] }
+"class" = { prefix = "class", body = ["class ${1:Name}", "{", "\t${0}", "}"] }
+"foreach" = { prefix = "fe", body = ["foreach ($${1:arr} as $${2:key} => $${3:value}) {", "\t${0}", "}"] }
+"echo" = { prefix = "echo", body = ["echo ${1:''};"] }
+"var_dump" = { prefix = "vd", body = ["var_dump(${1});"] }
+"if" = { prefix = "if", body = ["if (${1:condition}) {", "\t${0}", "}"] }
+"constructor" = { prefix = "con", body = ["public function __construct(${1})", "{", "\t${0}", "}"] }
+"getter/setter" = { prefix = "gs", body = ["public function get${1:Property}(): ${2:string}", "{", "\treturn $this->${3:property};", "}", "", "public function set${1:Property}(${2:string} $$${3:property}): self", "{", "\t$this->${3:property} = $$${3:property};", "\treturn $this;", "}"] }
+
+[markdown]
+"link" = { prefix = "a", body = ["[${1:text}](${2:url})"] }
+"image" = { prefix = "img", body = ["![${1:alt}](${2:url})"] }
+"code block" = { prefix = "code", body = ["```${1:language}", "${0}", "```"] }
+"inline code" = { prefix = "c", body = ["`${1:code}`"] }
+"bold" = { prefix = "b", body = ["**${1:bold}**"] }
+"italic" = { prefix = "i", body = ["*${1:italic}*"] }
+"list" = { prefix = "ul", body = ["- ${1:item}", "- ${2:item}", "- ${3:item}"] }
+"numbered list" = { prefix = "ol", body = ["1. ${1:item}", "2. ${2:item}", "3. ${3:item}"] }
+"blockquote" = { prefix = "bq", body = ["> ${1:quote}"] }
+"task list" = { prefix = "task", body = ["- [ ] ${1:todo}", "- [x] ${2:done}"] }
+"table" = { prefix = "table", body = ["| ${1:Header} | ${2:Header} |", "| --- | --- |", "| ${3} | ${4} |"] }
+"details" = { prefix = "details", body = ["<details>", "<summary>${1:Click to expand}</summary>", "", "${0}", "", "</details>"] }
+"note" = { prefix = "note", body = ["> **Note:** ${1}"] }
+"warning" = { prefix = "warn", body = ["> **Warning:** ${1}"] }
+"frontmatter" = { prefix = "fm", body = ["---", "title: ${1:Title}", "date: ${2}", "---", ""] }
+
+[typescript]
+"interface" = { prefix = "iface", body = ["interface ${1:Name} {", "\t${0}", "}"] }
+"type" = { prefix = "type", body = ["type ${1:Name} = ${2:type};"] }
+"generic function" = { prefix = "gfn", body = ["function ${1:name}<${2:T}>(${3}: ${2:T}): ${2:T} {", "\t${0}", "}"] }
+"React.FC" = { prefix = "rfc", body = ["const ${1:Component}: React.FC<${2:Props}> = (${3}) => {", "\treturn (", "\t\t${0}", "\t);", "};"] }
+
+[dockerfile]
+"from" = { prefix = "from", body = ["FROM ${1:alpine}:${2:latest}"] }
+"run" = { prefix = "run", body = ["RUN ${1:apk add --no-cache} \\", "\t${0}"] }
+"cmd" = { prefix = "cmd", body = ["CMD [\"${1}\", \"${2}\"]"] }
+"env" = { prefix = "env", body = ["ENV ${1:KEY}=${2:value}"] }
+"copy" = { prefix = "copy", body = ["COPY ${1:.} ${2:.}"] }
+"workdir" = { prefix = "workdir", body = ["WORKDIR ${1:/app}"] }
+"expose" = { prefix = "expose", body = ["EXPOSE ${1:3000}"] }
+
+[git-commit]
+"conventional" = { prefix = "feat", body = ["${1:feat}(scope): ${2:description}", "", "${0}"] }
+"fix" = { prefix = "fix", body = ["fix(${1:scope}): ${2:description}", "", "${0}"] }
+"chore" = { prefix = "chore", body = ["chore(${1:scope}): ${2:description}", "", "${0}"] }
+
+[shellscript]
+"for" = { prefix = "for", body = ["for ${1:i} in ${2:list}; do", "\t${0}", "done"] }
+"if" = { prefix = "if", body = ["if [[ ${1:condition} ]]; then", "\t${0}", "fi"] }
+"function" = { prefix = "fn", body = ["${1:name}() {", "\t${0}", "}"] }
+"case" = { prefix = "case", body = ["case ${1:var} in", "\t${2:pattern})", "\t\t${0}", "\t\t;;", "esac"] }
+
+[gotmpl]
+"with" = { prefix = "with", body = ["{{- with .${1:} }}", "\t${0}", "{{- end }}"] }
+"range" = { prefix = "range", body = ["{{- range .${1:items} }}", "\t${0}", "{{- end }}"] }
+"if" = { prefix = "if", body = ["{{- if .${1:} }}", "\t${0}", "{{- end }}"] }
+"define" = { prefix = "def", body = ["{{- define \"${1:template}\" }}", "\t${0}", "{{- end }}"] }
+"template" = { prefix = "tmpl", body = ["{{- template \"${1:template}\" . }}"] }

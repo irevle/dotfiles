@@ -1,0 +1,32 @@
+// ────────────── Input Configuration ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+input {
+    keyboard {
+        xkb 
+
+        numlock // Enable numlock on startup
+    }
+
+    touchpad {
+        dwt
+
+        tap // Enable tap-to-click
+        natural-scroll // Enable natural (macOS-style) scrolling
+
+        accel-profile "flat"
+
+        accel-speed 0.35
+    }
+
+    mouse {
+ 
+
+
+
+        accel-profile "flat"
+
+        accel-speed 0.39999999999999997
+    }
+    workspace-auto-back-and-forth // Enable workspace back & forth switching
+}

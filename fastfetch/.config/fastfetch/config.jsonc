@@ -1,0 +1,99 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "$HOME/dotfiles/fastfetch/.config/fastfetch/cachyos.txt",
+    "position": "top",
+    "padding": {
+      "top": 1,
+      "left": 2
+    }
+  },
+  "display": {
+    "separator": " "
+  },
+  "modules": [
+    {
+      "key": "{#white}  ╭───────────╮",
+      "type": "custom"
+    },
+    {
+      "key": "{#white}  │ {#31}{#white} user    {#keys}{#white}│",
+      "type": "title",
+      "format": "{#31}{user-name}"
+    },
+    {
+      "key": "{#white}  │ {#33}󰇅{#white} hname   {#keys}{#white}│",
+      "type": "title",
+      "format": "{#33}{host-name}"
+    },
+    {
+      "key": "{#white}  │ {#32}{icon}{#white} distro  {#keys}{#white}│",
+      "type": "os",
+      "format": "{#32}{pretty-name}"
+    },
+    {
+      "key": "{#white}  │ {#38;2;62;143;176}{#white} kernel  {#keys}{#white}│",
+      "type": "kernel",
+      "format": "{#38;2;62;143;176}{release}"
+    },
+    {
+      "key": "{#white}  │ {#38;2;144;163;234}󰅐{#white} uptime  {#keys}{#white}│",
+      "type": "uptime",
+      "format": "{#38;2;144;163;234}{formatted}"
+    },
+    {
+      "key": "{#white}  │ {#36}󰇄 desktop {#keys}{#white}│",
+      "type": "de"
+    },
+    // {
+    //   "key": "  │ {#31} term    {#keys}│",
+    //   "type": "terminal"
+    // },
+    {
+      "key": "{#white}  │ {#38;2;196;167;231}{#white} shell   {#keys}{#white}│",
+      "type": "shell",
+      "format": "{#38;2;196;167;231}{pretty-name}"
+    },
+    {
+      "key": "{#white}  │ {#38;2;96;190;190}󰏖{#white} pkgs    {#keys}{#white}│",
+      "type": "packages",
+      "format": "{#38;2;96;190;190}{all}"
+    },
+    // {
+    //   "key": "  │ {#33}󰍛 cpu     {#keys}│",
+    //   "type": "cpu",
+    //   "showPeCoreCount": true
+    // },
+    // {
+    //   "key": "
+    //   {#38;2;62;143;176}󰉉 disk    {#keys}│",
+    //   "type": "disk",
+    //   "folders": "/"
+    // },
+    {
+      "key": "{#white}  │ {#38;2;169;201;201}{#white} memory  {#keys}{#white}│",
+      "type": "memory",
+      "format": "{#38;2;169;201;201}{used} – {total}"
+    },
+    // {
+    //   "key": "  │ {#36}󰩟 network {#keys}│",
+    //   "type": "localip",
+    //   "format": "{ipv4} ({ifname})"
+    // },
+    {
+      "key": "{#white}  ├───────────┤",
+      "type": "custom"
+    },
+    {
+      "key": "{#white}  │ {#39} colors  {#keys}{#white}│",
+      "type": "colors",
+      "symbol": "circle"
+    },
+    {
+      "key": "{#white}  ╰───────────╯",
+      "type": "custom"
+    },
+    "break"
+  ]
+}

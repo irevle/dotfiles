@@ -1,0 +1,92 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "/home/elve/.config/fastfetch/text.txt",
+    "color": {
+      "1": "#F5E0DC",
+      "2": "#F2CDCD",
+      "3": "#f2cdda", // "#F5C2E7",
+      "4": "#FAB387",
+      "5": "#F9E2AF",
+      "6": "#A6E3A1",
+      "7": "#94E2D5",
+      "8": "#afe8f3", // "#89DCEB",
+      "9": "#74C7EC",
+    },
+    "padding": {
+      "left": 2
+    },
+    "position": "top",
+  },
+  "display": {
+    "separator": " "
+  },
+  "modules": [
+    "break",
+    "break",
+    {
+      "type": "title",
+      "keyWidth": 10,
+      "color": {
+        "user": "#89DCEB",
+        "at": "#CDD6F4",
+        "host": "#F5C2E7",
+      },
+    },
+    "break",
+    {
+      "type": "os",
+      "key": " ",
+      "keyColor": "#c09fff", // = color3
+    },
+    {
+      "type": "kernel",
+      "key": " ",
+      "keyColor": "#7c7c7c",
+    },
+    {
+      "type": "packages",
+      // "format": "{} (pacman)",
+      "key": " ",
+      "keyColor": "#e8e7c4",
+    },
+    {
+      "type": "shell",
+      "key": " ",
+      "keyColor": "#a29fff",
+    },
+    {
+      "type": "terminal",
+      "key": " ",
+      "keyColor": "#ff9f9f",
+    },
+    {
+      "type": "wm",
+      "key": " ",
+      "keyColor": "#97d7ff",
+    },
+    {
+      "type": "uptime",
+      "key": " ",
+      "keyColor": "#d9ff9f",
+    },
+    // {
+    //     "type": "media",
+    //     "key": "󰝚 ",
+    //     "keyColor": "#9fffdf", 
+    // },
+    {
+      "type": "battery",
+      "key": "󰂎 ",
+      "keyColor": "#a2d258",
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "diamond",
+    },
+    "break",
+    "break",
+  ]
+}

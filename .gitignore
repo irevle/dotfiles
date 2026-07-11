@@ -1,0 +1,11 @@
+*.bak
+*~
+*.swp
+*.old
+session.json
+herdr/.config/herdr/*.log
+herdr/.config/herdr/*.sock
+herdr/.config/herdr/session.json
+herdr/.config/herdr/release-notes.json
+helix/.config/helix/runtime/
+helix/.config/helix/themes/

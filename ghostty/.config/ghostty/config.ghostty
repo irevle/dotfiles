@@ -1,0 +1,12 @@
+confirm-close-surface = false
+theme = One Dark Two
+font-family = "VictorMono NFM"
+font-size = 12
+command = /usr/bin/zsh
+background-opacity = 0.93
+cursor-style = bar
+cursor-style-blink = false
+shell-integration-features = no-cursor
+custom-shader = shaders/cursor_warp.glsl
+custom-shader-animation = always
+keybind = ctrl+backspace=text:\x17

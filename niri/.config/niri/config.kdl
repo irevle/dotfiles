@@ -1,0 +1,32 @@
+spawn-at-startup "noctalia"
+
+include "./cfg/animation.kdl"
+include "./cfg/autostart.kdl"
+include "./cfg/keybinds.kdl"
+include "./cfg/input.kdl"
+include "./cfg/display.kdl"
+include "./cfg/layout.kdl"
+include "./cfg/rules.kdl"
+include "./cfg/misc.kdl"
+
+prefer-no-csd
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+include "./noctalia.kdl"
+
+layer-rule {
+    match namespace="^noctalia-bar$"
+    background-effect {
+        blur false
+    }
+}
+blur {
+    off
+}
+
+layer-rule { match namespace=r"^noctalia-backdrop"; place-within-backdrop true; }

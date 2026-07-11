@@ -1,0 +1,43 @@
+window-rule {
+  match app-id="dev.noctalia.Noctalia.Settings"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+     // if you use steam you will probably like these
+    window-rule {
+        match app-id="steam"
+        exclude title=r"^[Ss]team$"
+        open-floating true
+}
+
+    window-rule {
+       match app-id="steam" title=r"^notificationtoasts_\d+_desktop$"
+       default-floating-position x=10 y=10 relative-to="bottom-right"
+       open-focused false
+}
+
+    window-rule {
+        match app-id="steam_app_default" title=r"Form"
+        open-focused false        
+}
+
+window-rule { match app-id=r"zen"; open-maximized true; }
+
+window-rule { match app-id=r"Apache NetBeans IDE 26"; open-maximized true; }
+
+window-rule { match app-id=r"ONLYOFFICE"; open-maximized true; }
+
+window-rule {
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
+layer-rule {
+    match namespace="^noctalia-notification$"
+    background-effect {
+        blur true
+        xray false
+    }
+}   
