@@ -8,7 +8,6 @@ color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
-normal = "block"
 select = "underline"
 
 [editor.indent-guides]
@@ -19,7 +18,6 @@ character = "╎"
 hidden = false
 
 [editor.lsp]
-display-messages = true
 display-inlay-hints = true
 
 [editor.statusline]
@@ -31,9 +29,20 @@ enable = true
 max-indent-retain = 0
 wrap-indicator = "↳ "
 
-[editor.whitespace]
-render = "all"
-characters = {space = "·", nbsp = "⍽", tab = "→", newline = "⏎"}
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
 [keys.normal]
 "g" = {a = "code_action", t = "goto_type_definition"}

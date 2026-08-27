@@ -6,6 +6,8 @@ WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 export EDITOR="/usr/bin/helix"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+export NODE_MODULES_GLOBAL="$(npm root -g)"
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000

@@ -14,7 +14,7 @@
         xcursor-theme "Bibata-Original-Classic"
         xcursor-size 20
 
-    hide-after-inactive-ms 5000
+    hide-after-inactive-ms 10000
 }
 
     debug {

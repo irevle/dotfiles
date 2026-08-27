@@ -34,10 +34,23 @@ window-rule {
     clip-to-geometry true
 }
 
+layer-rule { match namespace=r"^noctalia-backdrop"; place-within-backdrop true; }
+
+
 layer-rule {
     match namespace="^noctalia-notification$"
     background-effect {
         blur true
         xray false
     }
-}   
+}
+   
+
+layer-rule {
+    match namespace="^noctalia-bar$"
+    background-effect {
+        blur false
+    }
+}
+
+window-rule { match app-id=r"zoom" title=r"annotate_toolbar" is-floating=true; }

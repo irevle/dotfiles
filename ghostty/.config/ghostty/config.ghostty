@@ -1,7 +1,8 @@
 confirm-close-surface = false
+# window-decoration = none
 theme = One Dark Two
-font-family = "VictorMono NFM"
-font-size = 12
+font-family = "AporeticSansMonoNerdFont"
+font-size = 13
 command = /usr/bin/zsh
 background-opacity = 0.93
 cursor-style = bar

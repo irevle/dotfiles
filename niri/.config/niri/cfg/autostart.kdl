@@ -1,1 +1,1 @@
-spawn-sh-at-startup "bongocat"
+spawn-at-startup "noctalia"
