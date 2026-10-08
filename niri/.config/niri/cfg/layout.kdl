@@ -12,11 +12,17 @@
 
         struts 
     focus-ring {
-        width 2
+        width 1
 
-        active-color "#62a0ea"
+        active-color "#33d17a"
+
+        inactive-color "#77767b"
     }
     border {
         off
+
+        active-color "#2ec27e"
+
+        inactive-color "#77767b"
     }
 }

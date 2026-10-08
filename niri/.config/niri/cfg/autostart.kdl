@@ -1,1 +1,2 @@
 spawn-at-startup "noctalia"
+spawn-sh-at-startup "nautilus --gapplication-service"

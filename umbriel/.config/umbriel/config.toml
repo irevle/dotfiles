@@ -1,0 +1,142 @@
+# Umbriel starting configuration
+#
+# Copy this file to ~/.config/umbriel/config.toml. Most changes apply when the
+# file is saved. Check edits with `umbriel config validate`.
+#
+# Complete reference: https://docs.noctalia.dev/umbriel/
+#
+# Commented settings below are examples, not built-in defaults.
+
+# ==============================================================================
+# Includes
+
+# Optional split configuration
+# https://docs.noctalia.dev/umbriel/configuration/#include
+[include]
+files = [
+    "env.toml",
+    "input.toml",
+    "keybinds.toml",
+    "window_rule.toml",
+    "layer_rule.toml",
+    "effects.toml"
+]
+
+[include.optional]
+files = []
+
+# ==============================================================================
+# General
+
+# Optional session examples. XWayland support is enabled by default.
+# https://docs.noctalia.dev/umbriel/configuration/#general
+[general]
+autostart = ["noctalia"]
+show_cheatsheet = false
+# xwayland = false
+# Sharp X11 apps and games on scaled outputs; they see physical resolutions.
+# xwayland_native_resolution = true
+
+# ==============================================================================
+# Lid events
+
+# Remove the laptop panel from the desktop while the lid is closed, then
+# restore it when the lid opens. Replace eDP-1 with the name from
+# `umbriel outputs`.
+# https://docs.noctalia.dev/umbriel/configuration/#events
+# [events]
+# lid_close = "umbriel msg output-disable:eDP-1"
+# lid_open = "umbriel msg output-enable:eDP-1"
+
+# ==============================================================================
+# Screencast
+
+# By default, the first target-changing action during an active share asks for
+# confirmation. Disable that protection only if immediate keybind changes are
+# preferred.
+# https://docs.noctalia.dev/umbriel/configuration/#screencast
+# [screencast]
+# disable_dynamic_confirmation = true
+
+# ==============================================================================
+# Outputs
+
+# Outputs are machine-specific. Run `umbriel outputs` to find names and modes.
+# https://docs.noctalia.dev/umbriel/outputs/
+#
+# [output.DP-1]
+# mode = "2560x1440@144"
+# position = [0, 0]
+# scale = 1.25
+# vrr = "fullscreen"
+# hdr = "auto"
+
+[output."BOE 0x0C76 Unknown"]
+mode = "1920x1080@144"
+position = [0, 0]
+scale = 1
+
+# ==============================================================================
+# Appearance
+# Blur uses a smaller radius than the built-in default.
+# https://docs.noctalia.dev/umbriel/appearance/
+[appearance]
+prefer_no_csd = true
+border_width = 2
+corner_radius = 10
+
+[appearance.blur]
+enabled = true
+optimized = true
+passes = 3
+radius = 3
+noise = 0.02
+brightness = 0.9
+contrast = 0.9
+saturation = 1.1
+
+# Choose the background color shown if the lock screen takes too long to appear.
+# [colors]
+# backdrop = "#000000FF"
+
+# ==============================================================================
+# Layout
+# New scrolling-layout windows start at half the output width. Without this
+# setting, each application chooses its starting width. Stacked columns retain
+# their most recently focused row when focus leaves and later returns.
+# https://docs.noctalia.dev/umbriel/layout/
+[layout]
+extent_presets = [0.333, 0.5, 0.667]
+
+[layout.scrolling]
+default_extent_fraction = 0.5
+
+# A tab group shows one window at a time below a bar of titles, and stacks and
+# resizes like any row of its column. Mod+W tabs the focused window with the
+# windows stacked beside it; Mod+Shift+J/K move a tab out of its group or a
+# window into one. Click, scroll, or drag a title to switch, reorder, or pull it
+# out.
+# [layout.tabs]
+# default_display = "normal"
+# new_tab_position = "after_active"
+# middle_click_closes = true
+#
+# [appearance.tab_bar]
+# style = "titles"         # "indicator" draws thin slots without titles
+# height = 24
+# font = "sans 10"
+# visible = true           # false hides every bar; tabs keep working
+# hide_when_single = false
+# max_tabs = 6            # show at most 6 slots; more tabs scroll
+# overflow = "scroll"      # or "shrink" to fit every tab
+
+# ==============================================================================
+# Overview
+# Built-in overview and animation values are used. The top-left hot corner opens
+# the overview after a short delay.
+# Overview: https://docs.noctalia.dev/umbriel/workspaces-overview/
+# Animation: https://docs.noctalia.dev/umbriel/animation/
+[hot_corners.top_left]
+enabled = true
+delay_ms = 500
+action = "overview-open"

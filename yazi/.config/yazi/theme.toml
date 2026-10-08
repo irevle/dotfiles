@@ -1,5 +1,2 @@
-[flavor]
-dark = "tokyo-night"
-
 [indicator]
 padding = { open = "▐", close = "▌" }

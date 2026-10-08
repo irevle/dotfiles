@@ -1,4 +1,12 @@
 include "./cfg/animation.kdl"
+output "eDP-1" {
+    mode "1920x1080@144.001"
+
+    scale 1.0
+
+    transform "normal"
+    position x=0 y=0
+}
 include "./cfg/autostart.kdl"
 include "./cfg/keybinds.kdl"
 include "./cfg/input.kdl"
@@ -16,4 +24,6 @@ gestures {
 
 blur {
     off
+    passes 2
+    offset 3.0
 }

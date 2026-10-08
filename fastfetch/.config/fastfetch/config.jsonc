@@ -3,6 +3,10 @@
   "logo": {
     "type": "file",
     "source": "$HOME/dotfiles/fastfetch/.config/fastfetch/cachyos.txt",
+    "color": {
+      "1": "#43EAA7",
+      "2": "#43EADC"
+    },
     "position": "top",
     "padding": {
       "top": 1,

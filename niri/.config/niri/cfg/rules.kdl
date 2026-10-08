@@ -32,6 +32,10 @@ window-rule { match app-id=r"ONLYOFFICE"; open-maximized true; }
 window-rule {
     geometry-corner-radius 4
     clip-to-geometry true
+    draw-border-with-background false
+    background-effect {
+        xray false
+    }
 }
 
 layer-rule { match namespace=r"^noctalia-backdrop"; place-within-backdrop true; }
@@ -54,3 +58,5 @@ layer-rule {
 }
 
 window-rule { match app-id=r"zoom" title=r"annotate_toolbar" is-floating=true; }
+
+window-rule { match app-id=r"dev.zed.Zed"; opacity 0.95; background-effect { blur true; }; }

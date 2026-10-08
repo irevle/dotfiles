@@ -4,10 +4,11 @@ fastfetch
 WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 
 export EDITOR="/usr/bin/helix"
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export NODE_MODULES_GLOBAL="$(npm root -g)"
+export ADW_DEBUG_COLOR_SCHEME=prefer-dark
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
